@@ -36,7 +36,3 @@ def dynamicProgramming(word):
         return word[start:start+max]
     else:
         return "No palindromic substrings found." 
-
-
-result = dynamicProgramming("racecarcc")
-print(result)

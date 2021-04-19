@@ -18,9 +18,3 @@ def bruteForce(word):
         return word[start:max]
     else:
         return "No palindromic substrings found."
-
-
-
-
-result = bruteForce("abcdef")
-print(result)
