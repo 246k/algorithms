@@ -4,6 +4,7 @@ def manachersAlgorithm(word):
     left = 0
     right = 0
     longestPalindromeArray = [0] * n
+    start = 0
 
     for i in range(n):
         if(i > right):
@@ -33,8 +34,3 @@ def manachersAlgorithm(word):
         return result
     else: 
         return "No palindromic substrings found." 
-
-
-print(manachersAlgorithm("abcdef"))
-print(manachersAlgorithm("racecar"))
-print(manachersAlgorithm("loftylevelup"))
