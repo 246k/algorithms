@@ -3,13 +3,15 @@ def manachersAlgorithm(word):
     left = 0
     right = 0
     start = 0
-    new_input_string = ""
+    newWord = ""
+    outputString = ""
 
     for i in word[: len(word) - 1]:
-        new_input_string += i + "|"
+        newWord += i + "|"
     # append last character
-    new_input_string += word[-1]
-    n = len(new_input_string)
+    newWord += word[-1]
+
+    n = len(newWord)
     longestPalindromeArray = [0] * n
 
     for i in range(n):
@@ -21,7 +23,7 @@ def manachersAlgorithm(word):
         while (
             i - k >= 0
             and i + k < n
-            and new_input_string[k + i] == new_input_string[i - k]
+            and newWord[k + i] == newWord[i - k]
         ):
             k += 1
 
@@ -35,8 +37,11 @@ def manachersAlgorithm(word):
             maxLength = longestPalindromeArray[i]
             start = i
 
-    result = new_input_string[start - maxLength // 2 : start + maxLength // 2 + 1]
+    result = newWord[start - maxLength // 2 : start + maxLength // 2 + 1]
     if len(result) > 1:
-        return result.replace('|', '')
+        for i in result:
+            if i != "|":
+                outputString += i
+        return outputString
     else: 
         return "No palindromic substrings found." 
