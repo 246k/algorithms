@@ -8,15 +8,14 @@ from manachersAlgorithm import manachersAlgorithm
 
 def randStr(N):
     chars = string.ascii_lowercase
-    return ''.join(random.choice(chars) for _ in range(N*(10**4)))
+    return ''.join(random.choice(chars) for _ in range(N*(10**3)))
 
 for x in range(1, 11):
     inputValue = randStr(x)
     print("Test #" + str(x) + ": ")
     print("String inputValue is: " + inputValue)
 
-    print("Brute Force output: ")
-    print(bruteForce(inputValue))
+    print("Brute Force output: " + bruteForce(inputValue))
     for bf in range(10):
         start_time = time.time()
         bruteForce(inputValue)
