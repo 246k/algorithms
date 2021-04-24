@@ -8,7 +8,7 @@ def manachersAlgorithm(word):
 
     for i in word[: len(word) - 1]:
         newWord += i + "|"
-    # append last character
+
     newWord += word[-1]
 
     n = len(newWord)
@@ -20,11 +20,9 @@ def manachersAlgorithm(word):
         else:
             k = min(longestPalindromeArray[left + right - i] // 2, right - i + 1)
 
-        while (
-            i - k >= 0
+        while (i - k >= 0
             and i + k < n
-            and newWord[k + i] == newWord[i - k]
-        ):
+            and newWord[k + i] == newWord[i - k]):
             k += 1
 
         longestPalindromeArray[i] = 2 * k - 1
